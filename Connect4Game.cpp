@@ -82,7 +82,7 @@ bool Connect4Game::isWin(int player){
 
         count = 0;
         for(k=0;k<4;k++)
-          if((i-k) < SIZE && (j+k) < SIZE && this->board[i-k][j+k] == player)
+          if((i-k) >= SIZE && (j+k) < SIZE && this->board[i-k][j+k] == player)
             count++;
         if(count == 4)  return true;
       }
