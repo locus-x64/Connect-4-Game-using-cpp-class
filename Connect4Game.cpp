@@ -12,17 +12,33 @@ void Connect4Game::initBoard(int size){
   }
 }
 void Connect4Game::showBoard(){
-  cout << '\t';
-  for(int j=0; j<this->SIZE; j++)
-      cout << j << ' ';
-  cout << "\n\n";
-  for(int i=0; i<this->SIZE; i++){
-    cout << i << "  " << '\t';
-    for(int j=0; j<this->SIZE; j++)
-      cout << this->board[i][j] << ' ';
-    cout << '\n';
-  }
-  cout << '\n';
+
+   // Print the Connect4 board
+   for (int r = 0; r < SIZE; r++){
+      // Draw dashed line
+      cout << "+";
+      for (int c = 0; c < SIZE; c++)
+         cout << "---+";
+      cout << "\n";
+
+      // Draw board contents
+      cout << "| ";
+      for (int c = 0; c < SIZE; c++)
+         cout << board[r][c] << " | ";
+      cout << "\n";
+    }
+
+   // Draw dashed line
+   cout << "+";
+   for (int c = 0; c < SIZE; c++)
+      cout << "---+";
+   cout << "\n";
+
+   // Draw column numbers
+   cout << "  ";
+   for (int c = 0; c < SIZE; c++)
+      cout << c << "   ";
+   cout << "\n\n";
 }
 void Connect4Game::insertValue(int pos){
   if(pos < 0 || pos > 6){
